@@ -38,8 +38,7 @@ return {
     lazy = false,
     config = function()
       require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+        suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
       }
     end,
   },
@@ -67,27 +66,10 @@ return {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-      {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-          require "configs.copilot"
-        end,
-      },
-      {
-        "hrsh7th/cmp-nvim-lsp", -- Add cmp-nvim-lsp as a dependency
-      },
+      "hrsh7th/cmp-nvim-lsp",
     },
     opts = {
       sources = {
-        { name = "copilot", group_index = 1 },
         { name = "nvim_lsp", group_index = 1 },
         { name = "path", group_index = 1 },
         { name = "luasnip", group_index = 2 },

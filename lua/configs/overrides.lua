@@ -17,12 +17,11 @@ M.mason = {
     "cmakelint",
 
     -- devops
-    "dockerls",
-    "docker_compose_language_service",
+    "dockerfile-language-server",
+    "docker-compose-language-service",
 
     -- python
-    "black",
-    "isort",
+    "ruff",
     "pyright",
   },
 }
